@@ -99,9 +99,7 @@ plot(a,v_guess(1,:),'DisplayName','employed', 'LineWidth',2);
 hold on;
 plot(a,v_guess(2,:),'DisplayName','unemployed','LineWidth',2);
 hold off;
-xlabel('K');
-ylabel('V(K)');
-title('Value Function over K at stage A','FontSize',18);
+title('Value Function','FontSize',18);
 lgd = legend;
 lgd.Location ='Southeast';
 lgd.FontSize = 14;
@@ -109,7 +107,7 @@ lgd.FontSize = 14;
 subplot(1,2,2)
 plot(a,pol_fn(1,:),'DisplayName','employed', 'LineWidth',2);
 plot(a,pol_fn(2,:),'DisplayName','unemployed', 'LineWidth',2);
-title('Policy Function')
+title('Policy Function','FontSize',18);
 
 % Question 3 Gini coefficient and lorenz curve
 
