@@ -3,7 +3,7 @@ clear;
 clc;
 
 % PARAMETERS
-beta = .994; % discount factor 
+beta = .9932; % discount factor 
 sigma = 1.5; % coefficient of risk aversion
 b = 0.5; % replacement ratio (unemployment benefits)
 y_s = [1, b]; % endowment in employment states
@@ -91,24 +91,31 @@ while abs(aggsav) >= 0.01
         
 end
 
-% Question 2 figure
-
-figure(1)
-subplot(1,2,1)
-plot(a,v_guess(1,:),'DisplayName','employed', 'LineWidth',2);
-hold on;
-plot(a,v_guess(2,:),'DisplayName','unemployed','LineWidth',2);
-hold off;
-title('Value Function','FontSize',18);
-lgd = legend;
-lgd.Location ='Southeast';
-lgd.FontSize = 14;
-
-subplot(1,2,2)
-plot(a,pol_fn(1,:),'DisplayName','employed', 'LineWidth',2);
-plot(a,pol_fn(2,:),'DisplayName','unemployed', 'LineWidth',2);
-title('Policy Function','FontSize',18);
 
 % Question 3 Gini coefficient and lorenz curve
+
+popu = reshape(mu', [2 * num_a, 1]);
+wealth = reshape([a+y_s(1);a+y_s(2)]',[2 * num_a, 1]);
+earning = reshape([repmat(y_s(1),[1, num_a]); repmat(y_s(2),[1, num_a])]', [2 * num_a,1]);
+
+nonnegwealth = wealth;
+nonnegwealth(nonnegwealth<0) = 0;
+
+figure(1)
+subtitle('Lorenz Curve for Wealth and Earnings')
+
+subplot(1,2,1)
+gini_wealth = gini(pop, nonnegwealth, true);
+title('Lorenz Curve for Wealth',num2str(gini_wealth),'FontSize',18);
+
+subplot(1,2,2)
+gini_earnings = gini(pop, earning, true);
+title('Lorenze Curve for Earning',num2str(gini_earnings),'FontSize',18);
+
+% Extra Credit
+
+PI_LR = PI^1000;
+C = PI_LR(1,:) * y_s';
+W_FB = (c^(1-sigma))/(1-sigma)/(1-beta);
 
 
