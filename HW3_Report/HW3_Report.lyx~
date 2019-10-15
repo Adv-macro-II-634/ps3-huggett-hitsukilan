@@ -116,7 +116,7 @@ The recursive problem is
 \noindent
 \begin_inset Formula 
 \[
-\upsilon(s_{t},\,a_{t})=\underset{\underline{a}\leq a_{t+1}\leq\frac{y(s_{t})+a_{t}}{q_{t}}}{max}\left\{ \frac{(y(s_{t})+a_{t}-a_{t+1}q_{t})^{1-\sigma}}{1-\sigma}+\beta\mathbb{E}_{s_{t+1}|s_{t}}[\upsilon(s_{t+1},\,a_{t+1})]\right\} 
+\upsilon(s,\,a)=\underset{a'\in\varGamma(s,\,a)}{max}\left\{ \frac{(y(s)+a-a'q)^{1-\sigma}}{1-\sigma}+\beta\mathbb{E}_{s'|s}[\upsilon(s',\,a')]\right\} 
 \]
 
 \end_inset
@@ -127,11 +127,11 @@ The recursive problem is
 \begin_layout Standard
 \noindent
 where 
-\begin_inset Formula $s_{t},\,a_{t}$
+\begin_inset Formula $s,\,a$
 \end_inset
 
  are state variables and 
-\begin_inset Formula $a_{t+1}$
+\begin_inset Formula $a'$
 \end_inset
 
  is the control variable.
@@ -141,25 +141,25 @@ where
 
 .
  Note that 
-\begin_inset Formula $a_{t+1}\in[\underline{a},\,\frac{y(s_{t})+a_{t}}{q_{t}}]$
+\begin_inset Formula $\varGamma(s,\,a)=\left\{ a':\underline{a}<a'<\frac{y(s)+a}{q}\right\} $
 \end_inset
 
 .
  With the budget constraint 
-\begin_inset Formula $C_{t}=y(s_{t})+a_{t}-a_{t+1}q_{t}$
+\begin_inset Formula $C=y(s)+a-a'q$
 \end_inset
 
 , the conditions of market clearence must be fulfilled.
  i.e.
  
-\begin_inset Formula $\sum C(s)=\sum y(s)$
+\begin_inset Formula $\sum C=\sum y(s)$
 \end_inset
 
  and 
-\begin_inset Formula $\sum a(s)=0$
+\begin_inset Formula $\sum a=0$
 \end_inset
 
-
+.
 \end_layout
 
 \end_body

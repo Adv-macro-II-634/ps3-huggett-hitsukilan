@@ -3,7 +3,7 @@ clear;
 clc;
 
 % PARAMETERS
-beta = .9932; % discount factor 
+beta = .994; % discount factor 
 sigma = 1.5; % coefficient of risk aversion
 b = 0.5; % replacement ratio (unemployment benefits)
 y_s = [1, b]; % endowment in employment states
@@ -39,7 +39,7 @@ while abs(aggsav) >= 0.01
     
     while v_tol >.0001
         % CONSTRUCT RETURN + EXPECTED CONTINUATION VALUE
-        val_mat = ret + beta * repmat(permute((PI*v_guess),[3 2 1]), [num_a 1 1]);
+        val_mat = ret + beta * repmat(permute((PI * v_guess),[3 2 1]), [num_a 1 1]);
         % CHOOSE HIGHEST VALUE (ASSOCIATED WITH a' CHOICE)
         [vfn, pol_index] = max(val_mat, [], 2);
         
@@ -57,7 +57,7 @@ while abs(aggsav) >= 0.01
     
     % SET UP INITITAL DISTRIBUTION
     
-    mu = zerox(2,num_a);
+    mu = zeros(2,num_a);
     mu(:) = 1/(2 * num_a);
     
     dis = 1;
@@ -65,15 +65,15 @@ while abs(aggsav) >= 0.01
         
     
         % ITERATE OVER DISTRIBUTIONS
-        MuNew = zeros(size(Mu));
-        [emp_ind, a_ind, mass] = find(Mu > 0); % find non-zero indices
+        MuNew = zeros(size(mu));
+        [emp_ind, a_ind, mass] = find(mu); % find non-zero indices
        
         for ii = 1:length(emp_ind)
             
         apr_ind = pol_indx(emp_ind(ii), a_ind(ii)); % which a prime does the policy fn prescribe?
         
         MuNew(:, apr_ind) = MuNew(:, apr_ind) + ... % which mass of households goes to which exogenous state?
-            (PI(emp_ind(ii), :) * mass)';
+            (PI(emp_ind(ii), :) * mass(ii))';
         end
         
      dis = max(max(abs(mu-MuNew)));

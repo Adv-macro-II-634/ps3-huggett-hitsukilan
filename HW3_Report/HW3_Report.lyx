@@ -135,7 +135,7 @@ where
 \end_inset
 
  is the control variable.
- State space 
+ State space can be described as 
 \begin_inset Formula $s=\{employed\,(e),\,unemployed\,(u)\}$
 \end_inset
 
@@ -145,21 +145,23 @@ where
 \end_inset
 
 .
- With the budget constraint 
-\begin_inset Formula $C=y(s)+a-a'q$
+\begin_inset Newline newline
 \end_inset
 
-, the conditions of market clearence must be fulfilled.
- i.e.
- 
-\begin_inset Formula $\sum C=\sum y(s)$
+
+\end_layout
+
+\begin_layout Subsection*
+\noindent
+Question 2.
+\begin_inset Newline newline
 \end_inset
 
- and 
-\begin_inset Formula $\sum a=0$
-\end_inset
 
-.
+\end_layout
+
+\begin_layout Standard
+The risk-free interet rate in the economy in steady-state is 
 \end_layout
 
 \end_body
