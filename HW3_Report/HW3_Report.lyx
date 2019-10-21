@@ -161,7 +161,106 @@ Question 2.
 \end_layout
 
 \begin_layout Standard
-The risk-free interet rate in the economy in steady-state is 
+The risk-free interet rate in the economy in steady-state is
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula 
+\[
+r*=\frac{1}{q}-1=\frac{1}{0.9951}-1=0.49\%
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Question 3.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Lorenz Curve for wealth and earnings are shown below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/Lan/Documents/GitHub/ps3-huggett-hitsukilan/Output/LorenzC.jpg
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Question 4.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If everyone started out with zero assets and there was perfect insurance
+ against all income shocks, people will smooth their consumption throughout
+ the whole period.
+ In this case, the expected utility of the allocation is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+W^{FB}=\frac{\bar{c}^{1-\sigma}}{1-\sigma}/1-\beta=-338.15
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+55.40% of households would benefit from the plan, and the aggregate welfare
+ gain is 0.0014.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/Lan/Documents/GitHub/ps3-huggett-hitsukilan/Output/CE.jpg
+	lyxscale 30
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
